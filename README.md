@@ -33,7 +33,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
       <br />
       <p align="center">
         Creating Azure VM: <br/>
-        <img src="" height="80%" width="80%" alt="Azure SIEM Lab Steps"/>
+        <img src="https://i.imgur.com/OgaJzo8.png" height="50%" width="50%" alt="Azure SIEM Lab Steps"/>
       </p>
       <br />
       <li>Check the licensing agreement, click “Next: Disks >” & then click “Next: Networking >”</li>
@@ -45,7 +45,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
       <br />
       <p align="center">
         Open Firewall Rule for network discoverability: <br/>
-        <img src="" height="80%" width="80%" alt="Azure SIEM Lab Steps"/>
+        <img src="https://i.imgur.com/D6b4YSk.png" height="50%" width="50%" alt="Azure SIEM Lab Steps"/>
       </p>
       <br />
       <li>Click “Review + create” & then “Create” blue buttons located at the bottom left of the screen
@@ -66,7 +66,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
       <br />
       <p align="center">
         Creating Log Analytics Workspace:  <br/>
-        <img src="" height="80%" width="80%" alt="Azure SIEM Lab Steps"/>
+        <img src="https://i.imgur.com/pVAqaEQ.png" height="50%" width="50%" alt="Azure SIEM Lab Steps"/>
       </p>
       <br />
       <li>Go back to Microsoft Azure home page, under “Azure services” click “+ Create a resource”</li>
@@ -77,7 +77,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
       <br />
       <p align="center">
         Setting up Log Analytics Workspace:  <br/>
-        <img src="" height="80%" width="80%" alt="Azure SIEM Lab Steps"/>
+        <img src="https://i.imgur.com/hdHaLKN.png" height="70%" width="70%" alt="Azure SIEM Lab Steps"/>
       </p>
       <br />
       <li>Click “Save” and “Confirm” (every option should be on except for “SQL servers on machines”)</li>
@@ -209,7 +209,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
     </ol>
     <p align="center">
       Azure Sentinel Map:  <br/>
-      <img src="" height="80%" width="80%" alt="Azure SIEM Lab Steps"/>
+      <img src="https://i.imgur.com/yUmCmGT.png" height="100%" width="100%" alt="Azure SIEM Lab Steps"/>
     <br />
     </p>
   </li>
