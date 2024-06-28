@@ -1,23 +1,23 @@
 # Azure Sentinel SIEM Lab
 
-<h2>Description</h2>
-This lab goes through the process of creating a Windows 10 honeypot virtual machine on Azure to leave open for attackers. We will extract the failed RDP logs from the Event Viewer, send it to an IP geolocation API that will return the geolocation data we'll use to map out the attacks globally on Azure Sentinel. 
+<h2><b>Description</b></h2>
+This lab goes through the process of creating a Windows 10 honeypot virtual machine on Azure to leave open for any attackers to access. We will extract the failed RDP logs from the Event Viewer using a custom PowerShell script and send it to an IP geolocation API that will return the geolocation data we'll use to map out the attacks globally on Azure Sentinel. 
 <br />
 
 
-<h2>Languages and Utilities</h2>
+<h2><b>Languages and Utilities</b></h2>
 
 - <b>PowerShell</b>
 - <b>https://www.ipgeolocation.io</b>
 
-<h2>Environments</h2>
+<h2><b>Environments</b></h2>
 
 - <b>Azure</b>
 - <b>Windows 10</b> (22H2)
 
-<h2>Lab walk-through:</h2>
+<h2><b>Lab walk-through:</b></h2>
 <ol>
-  <li>Create Free Azure Account
+  <li><b>Create Free Azure Account</b>
     <ol>
       <li>Go to https://azure.microsoft.com/en-ca/free/</li>
       <li>Click on “Start Free” button & fill out personal information </li>
@@ -26,7 +26,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
   
-  <li>Create Honey Pot Virtual Machine
+  <li><b>Create Honey Pot Virtual Machine</b>
     <ol>
       <li>Go to https://portal.azure.com/?quickstart=true#create/Microsoft.WindowsServer2016Datacenter-ARM </li>
       <li>Create resource group & determine VM settings (enter info on screenshot, use your own login info at the bottom)</li>
@@ -56,7 +56,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
   
-  <li>Create & set up Log Analytics Workspace
+  <li><b>Create & setup Log Analytics Workspace</b>
     <ol>
       <li>Go to Microsoft Azure home page</li>
       <li>On the search bar, type “log analytics workspace” & click on that option</li>
@@ -91,7 +91,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
   
-  <li>Create Azure Sentinel
+  <li><b>Create Azure Sentinel</b>
     <ol>
       <li>Go to Microsoft Azure home page</li>
       <li>On the search bar, type “Azure sentinel” & click on that option</li>
@@ -102,7 +102,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
   
-  <li><u>Connect to the Honey Pot Virtual Machine</u>
+  <li><b>Connect to the Honey Pot Virtual Machine</b>
     <ol>
       <li>Go to Microsoft Azure home page</li>
       <li>On the search bar, type “Virtual machines” & click on that option</li>
@@ -119,7 +119,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
 
-  <li>Setup Honey Pot Virtual Machine
+  <li><b>Setup Honey Pot Virtual Machine</b>
     <ol>
       <li>Go to start menu of the VM, type in “Event Viewer” & click on the app </li>
       <li>Click the “Windows Logs” left side tab & select “Security” option
@@ -142,7 +142,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
   
-  <li>Create Custom Log inside Log Analytics Workspace
+  <li><b>Create Custom Log inside Log Analytics Workspace</b>
     <ol>
       <li>Go to Microsoft Azure home page</li>
       <li>On the search bar, type “log analytics workspace” & click on that option</li>
@@ -167,7 +167,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
   
-  <li>Setup Azure Sentinel
+  <li><b>Setup Azure Sentinel</b>
     <ol>
       <li>Go to log analytics workspace, click on our workspace & click on “Logs” tab near the top</li>
       <li>Paste the custom log query below & click on the “Run” blue button located at the top of the page</li>
@@ -199,7 +199,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
   <br />
   <br />
 
-  <li>POST-SETUP (execute the lab)
+  <li><b>POST-SETUP (execute the lab)</b>
     <ol>
       <li>If you shut down the VM on your last use, start the VM on Azure (it's recommended to only disconnect from the VM so that the failed RDP logs actually appear)</li>
       <li>Go to RDP, paste the IP address of the VM in the “Computer” field & click “Connect”</li>
