@@ -1,7 +1,7 @@
 # Azure Sentinel SIEM Lab
 
 <h2><b>Description</b></h2>
-This lab goes through the process of creating a Windows 10 honeypot virtual machine on Azure to leave open for any attackers to access. We will extract the failed RDP logs from the Event Viewer using a custom PowerShell script and send it to an IP geolocation API that will return the geolocation data we'll use to map out the attacks globally on Azure Sentinel. 
+This lab goes through the process of creating a Windows 10 honeypot virtual machine on Azure to leave open for any attackers to access. We will then extract the failed RDP logs from the Event Viewer using a custom PowerShell script and send it to an IP geolocation API that will return the geolocation data we'll use to map out the attacks globally on Azure Sentinel. 
 <br />
 
 
@@ -213,7 +213,21 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
     <br />
     </p>
   </li>
+
+  <li><b>POST-LAB</b>
+    <p>
+      We want to take down the lab to avoid getting charged from Azure down the line. Since we started with a free trial that allows us to use up to 200$ of Azure credit, you don't want that free credit to run out because we left our resources up.
+    </p>
+    <ol>
+      <li>Go to Microsoft Azure home page</li>
+      <li>On the search bar, type “resource groups” & click on that option</li>
+      <li>Click on resource group we created for this lab</li>
+      <li>Select option "Delete resource group" located at the top of the web page</li>
+      <li>On confirmation page, type in the resource group and confirm selection</li>
+    </ol>
+  </li>
 </ol>
+
 
 
 <!--
