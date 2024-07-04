@@ -15,11 +15,10 @@ $XMLFilter = @'
 '@
 
 <#
-    This function creates a bunch of sample log files that will be used to train the
-    Extract feature in Log Analytics workspace. If you don't have enough log files to
-    "train" it, it will fail to extract certain fields for some reason -_-.
+    This function creates a bunch of sample log files that will be used to train the 
+    extract feature in Log Analytics workspace.
     We can avoid including these fake records on our map by filtering out all logs with
-    a destination host of "samplehost"
+    a destination host of "samplehost".
 #>
 Function write-Sample-Log() {
     "latitude:47.91542,longitude:-120.60306,destinationhost:samplehost,username:fakeuser,sourcehost:24.16.97.222,state:Washington,country:United States,label:United States - 24.16.97.222,timestamp:2021-10-26 03:28:29" | Out-File $LOGFILE_PATH -Append -Encoding utf8
@@ -41,7 +40,7 @@ if ((Test-Path $LOGFILE_PATH) -eq $false) {
     write-Sample-Log
 }
 
-# Infinite Loop that keeps checking the Event Viewer logs.
+# Infinite Loop that keeps checking the Event Viewer logs
 while ($true)
 {
     
@@ -52,8 +51,7 @@ while ($true)
         #Write-Host "No Failed Logons found. Re-run script when a login has failed."
     }
 
-    # Step through each event collected, get geolocation
-    #    for the IP Address, and add new events to the custom log
+    # Step through each event collected, get geolocation for the IP Address, and add new events to the custom log
     foreach ($event in $events) {
 
 
@@ -99,18 +97,16 @@ while ($true)
             $sourceIp = $event.properties[19].Value # IP Address
         
 
-            # Get the current contents of the Log file!
+            # Get the current contents of the Log file
             $log_contents = Get-Content -Path $LOGFILE_PATH
 
-            # Do not write to the log file if the log already exists.
+            # Do not write to the log file if the log already exists
             if (-Not ($log_contents -match "$($timestamp)") -or ($log_contents.Length -eq 0)) {
             
                 # Announce the gathering of geolocation data and pause for a second as to not rate-limit the API
-                #Write-Host "Getting Latitude and Longitude from IP Address and writing to log" -ForegroundColor Yellow -BackgroundColor Black
                 Start-Sleep -Seconds 1
 
                 # Make web request to the geolocation API
-                # For more info: https://ipgeolocation.io/documentation/ip-geolocation-api.html
                 $API_ENDPOINT = "https://api.ipgeolocation.io/ipgeo?apiKey=$($API_KEY)&ip=$($sourceIp)"
                 $response = Invoke-WebRequest -UseBasicParsing -Uri $API_ENDPOINT
 
@@ -124,9 +120,7 @@ while ($true)
                 if ($country -eq "") {$country -eq "null"}
 
                 # Write all gathered data to the custom log file. It will look something like this:
-                #
                 "latitude:$($latitude),longitude:$($longitude),destinationhost:$($destinationHost),username:$($username),sourcehost:$($sourceIp),state:$($state_prov), country:$($country),label:$($country) - $($sourceIp),timestamp:$($timestamp)" | Out-File $LOGFILE_PATH -Append -Encoding utf8
-
                 Write-Host -BackgroundColor Black -ForegroundColor Magenta "latitude:$($latitude),longitude:$($longitude),destinationhost:$($destinationHost),username:$($username),sourcehost:$($sourceIp),state:$($state_prov),label:$($country) - $($sourceIp),timestamp:$($timestamp)"
             }
             else {
