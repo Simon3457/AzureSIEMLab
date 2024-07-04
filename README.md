@@ -209,7 +209,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
     </ol>
     <p align="center">
       Azure Sentinel Map:  <br/>
-      <img src="https://i.imgur.com/yUmCmGT.png" height="100%" width="100%" alt="Azure SIEM Lab Steps"/>
+      <img src="https://i.imgur.com/X8OdMiw.png" height="100%" width="100%" alt="Azure SIEM Lab Steps"/>
     <br />
     </p>
   </li>
