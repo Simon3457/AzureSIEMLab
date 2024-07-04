@@ -223,7 +223,7 @@ This lab goes through the process of creating a Windows 10 honeypot virtual mach
       <li>On the search bar, type “resource groups” & click on that option</li>
       <li>Click on resource group we created for this lab</li>
       <li>Select option "Delete resource group" located at the top of the web page</li>
-      <li>On confirmation page, type in the resource group and confirm selection</li>
+      <li>On confirmation page, type in the resource group name and confirm selection</li>
     </ol>
   </li>
 </ol>
